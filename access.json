@@ -1,0 +1,12 @@
+{
+  "admin": [
+    "bp_query",
+    "bp_report"
+  ],
+  "user": [
+    "bp_query.form_menu"
+  ],
+  "manager": [
+    "bp_query"
+  ]
+}
