@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Main menu</title>
+<link href = "{{url_for('static', filename = 'auth.css')}}"
+          rel = "stylesheet" type = "text/css">
+</head>
+<body>
+ <div class="image-container"></div>
+    <nav>
+<center>
+
+
+        <h2>Введите логин и пароль</h2>
+        <form action="" method="post">
+            <label for="login">Ваш логин</label>
+            <input type="text" name="login" id="login">
+            <br><br>
+            <label for="password">Ваш пароль</label>
+            <input type="password" name="password" id="password">
+            <br><br>
+            <input type="submit" class="myButton" value="Авторизоваться" style="margin-right: 20px">
+            <input type="reset" class="myButton" value="Очистить">
+        </form>
+
+        <a href="{{url_for('main_menu')}}" >Выйти в главное меню</a>
+
+        {% if error %}
+        <p class=error ><strong>Произошла ошибка:<br/></strong> {{ error }}</p>
+
+        {% endif %}
+
+    </center>
+    </nav>
+</body>
+</html>

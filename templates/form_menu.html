@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Меню выбора</title>
+            <link href = "{{url_for('static', filename = 'main_menu.css')}}"
+          rel = "stylesheet" type = "text/css">
+
+</head>
+<body>
+<center>
+         <div class="image-container"></div>
+    <nav>
+
+        {% if group_name == 'admin' or group_name == 'manager'%}
+        <a href="{{url_for('req')}}" >Работа с запросами</a>
+        {% endif %}
+
+        {% if group_name == 'admin'%}
+        <a href="{{url_for('bp_report.work_with_reports')}}" >Работа с отчетами</a>
+        {% endif %}
+
+        {% if not user_id %}
+        <a href="{{url_for('auth')}}" >Авторизоваться</a>
+
+        {% elif error %}
+        <h2>{{error}}</h2>
+        {% endif %}
+
+        {% if group_name == 'user'%}
+        <a href="{{url_for('bp_market.order_index')}}" >Подключение услуг</a>
+        {% endif %}
+
+        {%if user_id %}
+        <a href="{{url_for('bp_query.catalog')}}" >Каталог услуг</a>
+        <a href="{{url_for('bp_auth.sign_out')}}" >Выйти из системы</a>
+        {% endif %}
+<div class="animation start-home"></div>
+
+    </nav>
+<CENTER>
+    <h1>Добро пожаловать!</h1>
+    <p><b></b></p>
+        </CENTER>
+
+</center>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Отчёт</title>
+</head>
+<body>
+<center>
+        <h2>{{ msg }}</h2>
+        <br><br>
+        <a class="myButton" href="{{url_for('bp_report.report_show', year=y, month=m)}}">Показать отчёт</a>
+        <p></p>
+        <a class="myButton" href="{{url_for('bp_auth.form_menu')}}">Вернуться в главное меню</a>
+        <p></p>
+        <a class="myButton" href="{{url_for('bp_auth.sign_out')}}">Выйти из системы</a>
+        <p></p>
+</center>
+</body>
+</html>

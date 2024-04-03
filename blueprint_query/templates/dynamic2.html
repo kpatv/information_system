@@ -1,0 +1,36 @@
+ <!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset="UTF-8">
+	<title>Dynamic_page</title>
+</head>
+<body>
+<center>
+	<h2>{{client_title}}</h2>
+	<p>
+		<table border="1">
+			<tr>
+				<td>Уникальный номер клиента</td>
+				<td>ФИО</td>
+				<td>Дата рождения</td>
+				<td>Номер паспорта</td>
+				<td>Адрес</td>
+				<td>Дата заключения договора</td>
+
+			</tr>
+			{% for client in data %}
+	<tr>
+			<td>{{client['cl_id']}}</td>
+			<td>{{client['name']}}</td>
+			<td>{{client['birthday']}}</td>
+			<td>{{client['passport']}}</td>
+			<td>{{client['address']}}</td>
+			<td>{{client['date_concl']}}</td>
+
+			{% endfor %}
+	</tr>
+
+</table>
+	<a href="{{url_for('bp_auth.form_menu')}}"> Возврат в главное меню</a>
+</body>
+</html> 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Результаты</title>
+    <link href="{{url_for('static', filename='sem2.css')}}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<center>
+
+        <h2 style="margin-top: 10px; margin-bottom: 10px">{{rep_title}}</h2>
+        <table style="border: 1px solid black; border-spacing: 0px; margin-bottom: 12px">
+            <tr>
+                {% for key in key_list %}
+                <th>{{key}}</th>
+                {% endfor %}
+            </tr>
+            {% for item in result %}
+            <tr>
+                {% for key in key_list_1 %}
+                <td>{{item[key]}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{{url_for('bp_auth.form_menu')}}" style="font-size: 24px">Вернуться в главное меню</a>
+        <p></p>
+        <a href="{{url_for('bp_auth.sign_out')}}" style="font-size: 24px">Выйти из системы</a>
+
+</center>
+</body>
+</html>

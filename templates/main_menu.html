@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main menu</title>
+    <link href = "{{url_for('static', filename = 'main_menu.css')}}"
+          rel = "stylesheet" type = "text/css">
+    <style>
+        a {
+    display: inline-block;
+    margin: 20px auto;
+    text-decoration: none;
+    color: #ff4f12;
+    padding: 10px 5px;
+    background-color: #ff4f12;
+    color: #fff;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: #550011;
+}
+    </style>
+</head>
+<body>
+<center>
+        <div class="image-container"></div>
+    <nav></nav>
+
+        <h1>Для дальнейшей работы Вам необходимо авторизоваться</h1>
+
+        <a href="{{url_for('auth')}}" style="font-size: 17px">Авторизоваться</a>
+        <div class="animation start-home"></div>
+
+
+</center>
+</body>
+</html>

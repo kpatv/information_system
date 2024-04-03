@@ -1,0 +1,1 @@
+insert into connected_services (date_on, date_off, cl_id, ser_id) values ("$dt_on", "$dt_off", "$cl_id", "$ser_id")

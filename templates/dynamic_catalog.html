@@ -1,0 +1,32 @@
+ <!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset="UTF-8">
+	<title>Dynamic_page</title>
+	            <link href = "{{url_for('static', filename = 'catalog.css')}}"
+          rel = "stylesheet" type = "text/css">
+</head>
+<body>
+<center>
+	<div class="image-container"></div>
+    <nav>
+	<h2>{{catalog_title}}</h2>
+	<p>
+		<table border="1">
+			<tr>
+				<td>Название услуги</td>
+				<td>Стоимость услуги</td>
+
+			</tr>
+			{% for services in data %}
+	<tr>
+			<td>{{services['title']}}</td>
+			<td>{{services['cost']}}</td>
+			{% endfor %}
+	</tr>
+
+</table>
+	<a href="{{url_for('bp_auth.form_menu')}}"> Возврат в главное меню</a>
+	</nav>
+</body>
+</html> 

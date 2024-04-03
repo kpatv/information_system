@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+
+    <title>Меню выбора отчета</title>
+            <link href = "{{url_for('static', filename = 'req.css')}}"
+          rel = "stylesheet" type = "text/css">
+
+</head>
+<body>
+<center>
+     <h2>Меню работы с отчетами</h2>
+<nav>
+
+
+
+    {% for key in key_list %}
+
+    {% if key == 'report 1' %}
+        <a>Отчет о количестве подключений конкретных услуг за месяц: </a>
+        <b><a href="{{ url_for('bp_report.create_report', proc=conf[key][0], sql=conf[key][1]) }}" style="color: #7700ff"> Создать </a></b>
+        <b><a href="{{ url_for('bp_report.report_show', proc=conf[key][0], sql=conf[key][1]) }}" style="color: #FF00FF" > Показать </a></b>
+    {% elif key == 'report 2' %}
+        <a>Отчет об изменениях баланса клиентов, номера которых находятся в заданном диапазоне: </a>
+        <b><a href="{{ url_for('bp_report.create_report2', proc=conf[key][0], sql=conf[key][1]) }}" style="color: #7700ff"> Создать </a></b>
+        <b><a href="{{ url_for('bp_report.report_show2', proc=conf[key][0], sql=conf[key][1]) }}" style="color: #FF00FF" > Показать </a></b>
+    {% endif %}
+    <p></p>
+{% endfor %}
+
+        <em><a href="{{url_for('bp_auth.form_menu')}}" style="color: #ff4f12"> Возврат в главное меню</a></em>
+</nav>
+</center>
+</body>
+</html>

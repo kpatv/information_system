@@ -1,0 +1,183 @@
+<!-- services_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <title>Services List</title>
+    <style>
+        body {
+            font-size: 16px;
+            font-family: 'Arial', sans-serif;
+            background-color: #ffffff;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 24px;
+            color: #7700ff;
+            text-shadow: 2px 2px 4px #000;
+            font-family: cursive;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #7700ff;
+            color: #fff;
+        }
+
+        tr:nth-child(even) { /* Цвет таблицы */
+            background-color: #f2f2f2;
+        }
+
+        input[type="submit"] { /* Кнопки отключения-подключения */
+            background-color: #ff4f12;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 20px;
+        }
+
+        input[type="submit"]:hover { /* Цвет кнопки, когда наводишь*/
+            background-color: #550011;
+        }
+
+        a {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+            margin: 0 auto;
+            position: relative;
+            width: 100%;
+            height: 50px;
+            background-color: #ff4f12;
+            border: 1px solid black;
+            border-radius: 8px;
+            box-shadow: 2px 2px 4px #000;
+        }
+
+        nav a {
+            line-height: 50px;
+            height: 100%;
+            font-size: 15px;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            text-decoration: none;
+            text-align: center;
+            text-transform: uppercase;
+            color: #fff;
+            cursor: pointer;
+            transition: width 0.3s, left 0.3s, background-color 0.3s;
+        }
+
+
+        .col-md-4 {
+            text-align: center;
+        }
+
+        .col-md-4 a {
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            color: #000000;
+
+            margin: 20px 0;
+            background-color: #ffffff;
+
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+            }
+
+        .col-md-4 a:hover {
+
+            background-color: #ff4f12;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Список услуг</h2>
+                <form method="post" action="{{ url_for('bp_market.order_index') }}">
+                    <table>
+                        <tr>
+                            <th>Номер услуги</th>
+                            <th>Название услуги</th>
+                            <th>Стоимость</th>
+                            <th>Статус подключения</th>
+                        </tr>
+                        {% for item in items %}
+                        <tr>
+                            <td>{{ item.ser_id }}</td>
+                            <td>{{ item.title }}</td>
+                            <td>{{ item.cost }}</td>
+                            {% if item.connection_status == 0 %}
+                            <td>
+                                <form action="" method="post">
+                                    <input type="hidden" name="s_id" value="{{item['ser_id']}}">
+                                    <input type="submit" id=1 name="action" value="Подключить">
+                                    <a>Услуга отключена</a>
+                                </form>
+                            </td>
+                            {% else %}
+                            <td>
+                                <form action="" method="post">
+                                    <input type="hidden" name="s_id" value="{{item['ser_id']}}">
+                                    <input type="submit" id=2 name="action" value="Отключить">
+                                    <a>Услуга активна</a>
+                                </form>
+                            </td>
+                            {% endif %}
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </form>
+            </div>
+
+            <div class="col-md-4">
+                <h2>Изменения</h2>
+                <a href="{{ url_for('bp_market.save_order') }}" style="font-size: 25px">Сохранить изменения</a>
+                <p></p>
+                <a href="{{url_for('bp_auth.form_menu')}}" style="color: #000000">Возврат в главное меню</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+

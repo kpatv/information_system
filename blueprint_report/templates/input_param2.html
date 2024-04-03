@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск</title>
+
+</head>
+<body>
+<center>
+
+        <h2 style="margin-top: 10px">Введите параметры поиска</h2>
+        <form action="" method="post">
+            <label for="date">Введите дату отчёта (Год и месяц)</label>
+            <input type="month" name="date" id="date">
+            <br><br>
+            <label for="start_index">Введите id начала диапазона поиска</label>
+            <input type="text" name="start_index" id="start_index">
+            <br><br>
+            <label for="end_index">Введите id окончания диапазона поиска</label>
+            <input type="text" name="end_index" id="end_index">
+            <br><br>
+            <input type="submit" class="button" value="Отправить">
+            <input type="reset" class="button" value="Очистить">
+
+        </form>
+
+        <a href="{{url_for('bp_auth.form_menu')}}" style="font-size: 24px">Вернуться в главное меню</a>
+
+        {% if error %}
+        <p class=error style="font-size: 20px"><strong>Произошла ошибка:<br/></strong> {{ error }}</p>
+        {% endif %}
+
+</center>
+</body>
+</html>

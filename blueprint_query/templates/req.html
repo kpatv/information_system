@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main_menu</title>
+        <link href = "{{url_for('static', filename = 'req.css')}}"
+          rel = "stylesheet" type = "text/css">
+</head>
+
+<body>
+<center>
+            <h2>Меню работы с запросами</h2>
+    <nav>
+            <a href="{{url_for('bp_query.query_index')}}"> Показать все сведения о клиентах моложе заданного возраста</a>
+            <p></p>
+            <a href="{{url_for('bp_query.query_index2')}}"> Показать все сведения о клиентах, ни разу не изменивших баланс за выбранный период времени</a>
+            <p></p>
+            <a href="{{url_for('bp_query.query_index3')}}">Поиск клиентов по городам</a>
+            <p></p>
+            <em><a href="{{url_for('bp_auth.form_menu')}}" style="color: #ff4f12"> Возврат в главное меню</a></em>
+</nav>
+
+
+</center>
+</body>
+</html>

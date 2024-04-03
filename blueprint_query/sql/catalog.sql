@@ -1,0 +1,1 @@
+select title, cost from services

@@ -1,0 +1,1 @@
+select max(date_on) from connected_services where cl_id="$cl_id" and ser_id="$ser_id" group by cl_id

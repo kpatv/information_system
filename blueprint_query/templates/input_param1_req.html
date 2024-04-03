@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Работа с запросами</title>
+</head>
+<body>
+<center>
+  <h2>Показать все сведения о клиентах моложе заданного возраста</h2>
+  <form action="" method="post">
+    <label for="client_age">Введите возраст: </label>
+    <input type="number" name="client_age" id="client_age">
+    <br><br>
+    <input type="submit" class="button" value="Отправить">
+    <input type="reset" class="button" value="Очистить">
+
+      <p></p>
+      <em><a href="{{url_for('bp_auth.form_menu')}}" style="color: #ff4f12"> Возврат в главное меню</a></em>
+
+
+  </form>
+</center>
+
+</body>
+</html>

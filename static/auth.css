@@ -1,0 +1,81 @@
+/* style.css */
+body {
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+h2 {
+    margin: 40px 0;
+    font-size: 25px;
+    color: #7700ff;
+    text-shadow: 2px 2px 4px #000;
+    font-family: cursive;
+}
+
+form {
+    margin: 20px auto;
+    width: 20%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    background-color: #7700ff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #5500cc;
+}
+
+a {
+    display: inline-block;
+    margin: 20px 0;
+    text-decoration: none;
+    color: #ff4f12;
+    background-color: #ff4f12;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: #550011;
+}
+
+.error {
+    color: #ff0000;
+    font-weight: bold;
+}
+
